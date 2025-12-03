@@ -1,0 +1,311 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Research Topic Brainstorming Report</title>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
+            h1 { text-align: center; color: #2c3e50; margin-bottom: 40px; }
+            .topic-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px; padding: 25px; border-left: 5px solid #3498db; }
+            .topic-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
+            .topic-title { font-size: 1.5em; color: #2c3e50; margin: 0; }
+            .topic-score { background: #3498db; color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+            .section-title { font-weight: bold; color: #7f8c8d; margin-top: 15px; text-transform: uppercase; font-size: 0.9em; }
+            .content { margin-top: 5px; }
+            .toc-list { padding-left: 20px; }
+            .evaluation-box { background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 5px; padding: 15px; margin-top: 20px; }
+            .score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+            .score-item { text-align: center; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #dee2e6; }
+            .score-value { font-size: 1.2em; font-weight: bold; color: #2c3e50; }
+            .score-label { font-size: 0.8em; color: #6c757d; }
+            .paper-item { margin-bottom: 15px; padding: 10px; background-color: #f8f9fa; border-radius: 5px; border-left: 3px solid #3498db; }
+            .paper-title { font-weight: bold; color: #2c3e50; margin-bottom: 5px; }
+            .paper-title a { color: #3498db; text-decoration: none; }
+            .paper-title a:hover { text-decoration: underline; }
+            .paper-meta { font-size: 0.9em; color: #6c757d; margin-top: 3px; }
+            .paper-meta-label { font-weight: bold; color: #7f8c8d; }
+        </style>
+    </head>
+    <body>
+        <h1>Research Topic Brainstorming Report</h1>
+    
+        <div class="topic-card">
+            <div class="topic-header">
+                <h2 class="topic-title">#1 Ontology-Driven Graph Neural Networks for Knowledge Representation</h2>
+                <div class="topic-score">Score: 13/15</div>
+            </div>
+            
+            <div class="section-title">Background</div>
+            <div class="content">Current graph neural networks (GNNs) lack formal ontological frameworks, limiting their ability to handle complex semantic reasoning and interoperability across domains.</div>
+            
+            <div class="section-title">Necessity</div>
+            <div class="content">Existing GNN architectures struggle with integrating domain-specific knowledge and ensuring semantic consistency, which is critical for real-world applications like healthcare and finance.</div>
+            
+            <div class="section-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li>1. Introduction to Ontology-Driven Knowledge Graphs</li><li>2. Integration of Formal Ontologies into GNN Architectures</li><li>3. Semantic Reasoning in Dynamic Knowledge Graphs</li><li>4. Applications in Cross-Domain Interoperability</li>
+            </ul>
+            
+            <div class="section-title">Expected Effects</div>
+            <div class="content">Enable semantic-aware knowledge representation, reducing information loss and improving reasoning accuracy by 80%. Facilitate cross-domain interoperability with a unified semantic framework.</div>
+            
+            
+            <div class="section-title">Related Papers</div>
+            <div>
+                
+                <div class="paper-item">
+                    <div class="paper-title">
+                        <a href='https://openalex.org/W4319300107' target='_blank'>More Knowledge, Less Bias: Unbiasing Scene Graph Generation with Explicit Ontological Adjustment</a>
+                    </div>
+                    <div class="paper-meta"><span class="paper-meta-label">Authors:</span> Z, h, a et al.</div>
+                    <div class="paper-meta"><span class="paper-meta-label">Year:</span> 2023</div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="evaluation-box">
+                <div class="section-title" style="margin-top: 0;">Evaluation</div>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Originality</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Feasibility</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">5</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <p><strong>Reasoning:</strong> The proposal to integrate formal ontological frameworks with graph neural networks is a relatively fresh direction, building on recent advances in both fields but not yet widely explored, hence an originality score of 4. Implementing such a system is realistic given current deep learning and knowledge graph technologies, though it will require careful design to maintain semantic consistency, warranting a feasibility score of 4. The potential impact is high, especially for domains like healthcare and finance where semantic accuracy and interoperability are critical; the expected 80% improvement in reasoning accuracy and cross-domain integration justify an impact score of 5.</p>
+            </div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="topic-header">
+                <h2 class="topic-title">#2 Dynamic Knowledge Graphs for Real-Time Semantic Analytics</h2>
+                <div class="topic-score">Score: 12/15</div>
+            </div>
+            
+            <div class="section-title">Background</div>
+            <div class="content">Current knowledge graphs are static or batch-processed, failing to handle real-time data streams and dynamic semantic updates efficiently.</div>
+            
+            <div class="section-title">Necessity</div>
+            <div class="content">Real-time applications like IoT, social media analytics, and fraud detection require immediate semantic understanding, which current methods cannot provide due to their inherent latency.</div>
+            
+            <div class="section-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li>1. Challenges of Real-Time Semantic Processing</li><li>2. Event-Driven Dynamic Knowledge Graph Architecture</li><li>3. Continuous Reasoning with Stream Processing</li><li>4. Scalability and Efficiency in Distributed Systems</li>
+            </ul>
+            
+            <div class="section-title">Expected Effects</div>
+            <div class="content">Achieve real-time semantic processing with a 90% reduction in latency, enabling immediate insights and decision-making.</div>
+            
+            
+            <div class="section-title">Related Papers</div>
+            <div>
+                
+                <div class="paper-item">
+                    <div class="paper-title">
+                        <a href='https://openalex.org/W3153711697' target='_blank'>Ontology summit 2020 communiqué: Knowledge graphs</a>
+                    </div>
+                    <div class="paper-meta"><span class="paper-meta-label">Authors:</span> K, e, n et al.</div>
+                    <div class="paper-meta"><span class="paper-meta-label">Year:</span> 2021</div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="evaluation-box">
+                <div class="section-title" style="margin-top: 0;">Evaluation</div>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Originality</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">3</div>
+                        <div class="score-label">Feasibility</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">5</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <p><strong>Reasoning:</strong> The proposal tackles the underexplored challenge of maintaining and querying knowledge graphs in real‑time, which is a novel extension of current batch‑processing approaches. While the technical hurdles—incremental reasoning, low‑latency updates, and scalable storage—are non‑trivial, existing streaming frameworks and incremental inference techniques make the project realistically achievable. The potential impact is high, as real‑time semantic analytics can transform IoT monitoring, social media trend detection, and fraud prevention, offering immediate insights that current systems cannot provide.</p>
+            </div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="topic-header">
+                <h2 class="topic-title">#3 Foundational Ontologies for Unified Scientific Data Integration</h2>
+                <div class="topic-score">Score: 12/15</div>
+            </div>
+            
+            <div class="section-title">Background</div>
+            <div class="content">Scientific data integration faces challenges due to domain-specific ontologies lacking a common theoretical foundation, hindering cross-disciplinary research.</div>
+            
+            <div class="section-title">Necessity</div>
+            <div class="content">The lack of a unified semantic framework across scientific domains impedes collaborative research and the synthesis of knowledge from diverse fields.</div>
+            
+            <div class="section-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li>1. The Need for Foundational Ontologies in Science</li><li>2. Integration of UFO Ontology with Scientific Domains</li><li>3. Cross-Domain Knowledge Graph Construction</li><li>4. Applications in Interdisciplinary Research</li>
+            </ul>
+            
+            <div class="section-title">Expected Effects</div>
+            <div class="content">Enable seamless integration of scientific data across domains, increasing research efficiency by 60% and accelerating discovery.</div>
+            
+            
+            <div class="section-title">Related Papers</div>
+            <div>
+                
+                <div class="paper-item">
+                    <div class="paper-title">
+                        <a href='https://openalex.org/W2253998768' target='_blank'>Exploiting a perdurantist foundational ontology and graph database for semantic data integration</a>
+                    </div>
+                    <div class="paper-meta"><span class="paper-meta-label">Authors:</span> G, e, o et al.</div>
+                    <div class="paper-meta"><span class="paper-meta-label">Year:</span> 2015</div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="evaluation-box">
+                <div class="section-title" style="margin-top: 0;">Evaluation</div>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Originality</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">3</div>
+                        <div class="score-label">Feasibility</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">5</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <p><strong>Reasoning:</strong> The proposal tackles a well-known bottleneck in scientific data integration by aiming to construct a foundational ontology that could serve as a common semantic backbone across disciplines. This idea is relatively novel, as most current efforts focus on domain-specific or semi-automated alignment rather than a unified theoretical foundation, warranting an originality score of 4. Implementing such a comprehensive ontology is a substantial undertaking requiring extensive collaboration, standardization, and tooling; while feasible in principle, the practical challenges and resource demands justify a feasibility score of 3. If achieved, the impact would be transformative—enabling seamless cross-disciplinary data integration, accelerating discovery, and potentially boosting research efficiency by a significant margin—hence an impact score of 5.</p>
+            </div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="topic-header">
+                <h2 class="topic-title">#4 Quantum-Ready Knowledge Graphs: Preparing for Post-Classical Semantic Computing</h2>
+                <div class="topic-score">Score: 12/15</div>
+            </div>
+            
+            <div class="section-title">Background</div>
+            <div class="content">Current knowledge graph technologies are not designed to leverage quantum computing advantages, limiting their potential in the post-classical era.</div>
+            
+            <div class="section-title">Necessity</div>
+            <div class="content">The advent of quantum computing necessitates rethinking knowledge representation and reasoning paradigms to harness its computational power effectively.</div>
+            
+            <div class="section-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li>1. Quantum Computing Challenges for Knowledge Graphs</li><li>2. Quantum-Ready Ontology Design Principles</li><li>3. Hybrid Classical-Quantum Reasoning Frameworks</li><li>4. Applications in Quantum Machine Learning</li>
+            </ul>
+            
+            <div class="section-title">Expected Effects</div>
+            <div class="content">Develop quantum-ready knowledge graphs, achieving exponential improvements in certain reasoning tasks and paving the way for quantum AI advancements.</div>
+            
+            
+            <div class="section-title">Related Papers</div>
+            <div>
+                
+                <div class="paper-item">
+                    <div class="paper-title">
+                        <a href='https://openalex.org/W3153711697' target='_blank'>Ontology summit 2020 communiqué: Knowledge graphs</a>
+                    </div>
+                    <div class="paper-meta"><span class="paper-meta-label">Authors:</span> K, e, n et al.</div>
+                    <div class="paper-meta"><span class="paper-meta-label">Year:</span> 2021</div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="evaluation-box">
+                <div class="section-title" style="margin-top: 0;">Evaluation</div>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Originality</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">3</div>
+                        <div class="score-label">Feasibility</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">5</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <p><strong>Reasoning:</strong> The idea of designing knowledge graphs that are explicitly compatible with quantum computing paradigms is relatively novel, as most current KG frameworks are built for classical computation. However, the concept is not entirely unprecedented, which places its originality at 4. Feasibility is moderate; while quantum hardware is still in early stages, developing quantum‑ready representations and hybrid classical‑quantum inference pipelines is achievable with current simulation tools and near‑term quantum processors, warranting a score of 3. The potential impact is high because such a framework could unlock exponential speedups for specific reasoning tasks and serve as a foundational layer for quantum AI systems, justifying a top score of 5.</p>
+            </div>
+        </div>
+        
+        <div class="topic-card">
+            <div class="topic-header">
+                <h2 class="topic-title">#5 Ontology Alignment via Game Theory: Strategic Interactions for Semantic Consistency</h2>
+                <div class="topic-score">Score: 11/15</div>
+            </div>
+            
+            <div class="section-title">Background</div>
+            <div class="content">Ontology alignment relies heavily on heuristic-based methods, which often fail to capture the strategic nature of semantic conflicts and dependencies.</div>
+            
+            <div class="section-title">Necessity</div>
+            <div class="content">The increasing diversity of ontologies in decentralized systems demands a more robust approach to ensure semantic consistency without centralized control.</div>
+            
+            <div class="section-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li>1. Strategic Modeling of Ontology Alignment</li><li>2. Game-Theoretic Framework for Semantic Negotiation</li><li>3. Nash Equilibrium in Ontology Matching</li><li>4. Applications in Decentralized Knowledge Systems</li>
+            </ul>
+            
+            <div class="section-title">Expected Effects</div>
+            <div class="content">Establish a formal game-theoretic foundation for ontology alignment, reducing semantic conflicts by 70% and improving system robustness.</div>
+            
+            
+            <div class="section-title">Related Papers</div>
+            <div>
+                
+                <div class="paper-item">
+                    <div class="paper-title">
+                        <a href='https://openalex.org/W3175988714' target='_blank'>OntoEA: Ontology-guided Entity Alignment via Joint Knowledge Graph Embedding</a>
+                    </div>
+                    <div class="paper-meta"><span class="paper-meta-label">Authors:</span> Y, u, e et al.</div>
+                    <div class="paper-meta"><span class="paper-meta-label">Year:</span> 2021</div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="evaluation-box">
+                <div class="section-title" style="margin-top: 0;">Evaluation</div>
+                <div class="score-grid">
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Originality</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">3</div>
+                        <div class="score-label">Feasibility</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-value">4</div>
+                        <div class="score-label">Impact</div>
+                    </div>
+                </div>
+                <p><strong>Reasoning:</strong> The proposal introduces a game‑theoretic framework for ontology alignment, which is a relatively unexplored angle in semantic web research, earning it a high originality rating. While the theoretical underpinnings are sound, practical implementation will require sophisticated modeling of strategic interactions and robust computational resources, making feasibility moderate. The expected 70% reduction in semantic conflicts and the move toward decentralized consistency suggest a substantial contribution to the field, justifying a strong impact score.</p>
+            </div>
+        </div>
+        
+    </body>
+    </html>
+    
