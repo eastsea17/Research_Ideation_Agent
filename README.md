@@ -179,6 +179,8 @@ pip install -r requirements.txt
 ```bash
 streamlit run streamlit_app.py
 ```
+<img width="1494" height="642" alt="image" src="https://github.com/user-attachments/assets/ab56afb5-25df-473e-85dd-593ce1fad654" />
+
 
 #### 4. Run CLI (Legacy Mode)
 You can still use the command-line interface:
