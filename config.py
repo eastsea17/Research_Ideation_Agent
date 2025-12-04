@@ -5,9 +5,28 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 # Model Names
 MODEL_EMBEDDING = "nomic-embed-text:latest"
-MODEL_GENERATOR = "deepseek-r1:14b"
-#MODEL_GENERATOR = "gpt-oss:20b"
+
+# --- MODEL_GENERATOR Configuration ---
+# Select one of the following options:
+
+# Option 1: Local Ollama Models
+#MODEL_GENERATOR = "deepseek-r1:14b"
+# MODEL_GENERATOR = "ministral-3:8b"
+
+# Option 2: Ollama Cloud Models
+MODEL_GENERATOR = "deepseek-v3.1:671b-cloud"
+# MODEL_GENERATOR = "gpt-oss:120b-cloud"
+
+
+# --- MODEL_EVALUATOR Configuration ---
+# Select one of the following options:
+
+# Option 1: Local Ollama Models
 MODEL_EVALUATOR = "gpt-oss:20b"
+
+# Option 2: Ollama Cloud Models
+# MODEL_EVALUATOR = "deepseek-v3.1:671b-cloud"
+# MODEL_EVALUATOR = "gpt-oss:120b-cloud"
 
 # Vector DB Configuration
 CHROMA_PERSIST_DIRECTORY = "./chroma_db"

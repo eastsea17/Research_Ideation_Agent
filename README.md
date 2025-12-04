@@ -1,4 +1,4 @@
-# Research Topic Brainstorming Tool
+# Multi-Agent Research Topic Brainstorming Tool
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Ollama](https://img.shields.io/badge/Ollama-Required-green.svg)](https://ollama.ai/)
@@ -34,48 +34,56 @@
 
 This tool uses a **multi-agent AI system** to help researchers brainstorm novel research topics. By analyzing academic papers from the OpenAlex database, it generates, evaluates, and prioritizes research topics across multiple dimensions (originality, feasibility, impact).
 
-The system employs **local LLMs via Ollama**, making it cost-free and privacy-preserving while providing powerful research assistance. It is optimized for local hardware (e.g., Apple Silicon) by actively managing memory usage.
+The system employs **local LLMs via Ollama**, making it cost-free and privacy-preserving while providing powerful research assistance. It is optimized for local hardware (e.g., Apple Silicon) by actively managing memory usage. Additionally, it supports **Ollama Cloud** for accessing larger, more powerful models like `deepseek-v3.1:671b-cloud` and `gpt-oss:120b-cloud` without local hardware constraints.
 
 ---
 
 ## ✨ Features
 
 ### 🔍 **Automated Paper Collection**
+
 - Fetches academic papers from [OpenAlex API](https://docs.openalex.org/) based on keywords
 - Reconstructs abstracts from inverted index format
 - Saves collected papers to CSV for later analysis
 
 ### 🧠 **Multi-Agent Architecture**
+
 1. **Collector Agent**: Retrieves and indexes research papers into a vector database
 2. **Generator Agent**: Creates innovative research topics based on paper context
 3. **Evaluator Agent**: Scores topics on originality, feasibility, and impact
 4. **Translator Agent**: Translates reports into target languages (e.g., Korean)
 
 ### ⚡ **Optimized for Local Execution**
+
 - **Memory Management**: Automatically unloads LLMs from memory when not in use to prevent OOM errors on consumer hardware (e.g., MacBook Pro).
 - **Batch Processing**: Processes vector embeddings in small batches.
 
 ### 📊 **Vector Database Integration**
+
 - Uses **ChromaDB** for semantic search over papers
 - Embeddings via Ollama's `nomic-embed-text` model
 - Efficient batch processing to avoid API overload
 
 ### 🎨 **Beautiful HTML Reports**
+
 - Auto-generated professional HTML reports (English + Korean)
 - Color-coded scoring system
 - Organized sections: Background, Necessity, Table of Contents, Expected Effects
 - Related papers linked to each topic
 
 ### 🌐 **Multi-Language Support**
+
 - Automatic translation of research topics and evaluations
 - Professional academic tone preservation
 
 ### 🖥️ **Interactive Web Interface**
+
 - **Streamlit App**: User-friendly GUI for research and chatting
 - **RAG Chat**: Interactive chat with collected papers
 - **Real-time Progress**: Visual feedback during research tasks
 
 ### 🐳 **Docker Support**
+
 - **Containerized**: Easy deployment with Docker and Docker Compose
 - **Isolated Environment**: No need to manage local Python dependencies
 
@@ -115,11 +123,13 @@ graph TD
 ### Required Software
 
 1. **Python 3.8+**
+
    ```bash
    python3 --version
    ```
 
 2. **Ollama** ([Installation Guide](https://ollama.ai/))
+
    ```bash
    # Install Ollama (macOS/Linux)
    curl -fsSL https://ollama.ai/install.sh | sh
@@ -129,6 +139,7 @@ graph TD
    ```
 
 3. **Required Ollama Models**
+
    ```bash
    # Pull embedding model
    ollama pull nomic-embed-text:latest
@@ -140,6 +151,8 @@ graph TD
    ollama pull gpt-oss:20b
    ```
 
+   > **Note:** If you are using **Ollama Cloud** models (e.g., `deepseek-v3.1:671b-cloud`), you do **not** need to pull them locally. Just configure them in `config.py`.
+
 ---
 
 ## 🚀 Installation & Usage
@@ -149,15 +162,18 @@ graph TD
 The easiest way to run the application is using Docker.
 
 #### 1. Prerequisites
+
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
 - [Ollama](https://ollama.ai/) running on your host machine (`ollama serve`)
 
 #### 2. Run with Docker Compose
+
 ```bash
 docker-compose up --build
 ```
 
 #### 3. Access the App
+
 Open your browser and navigate to: [http://localhost:8501](http://localhost:8501)
 
 ---
@@ -165,25 +181,28 @@ Open your browser and navigate to: [http://localhost:8501](http://localhost:8501
 ### Option B: Local Python Setup
 
 #### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/yourusername/MultiAgents_with_Ollama.git
 cd MultiAgents_with_Ollama
 ```
 
 #### 2. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 #### 3. Run the Streamlit App
+
 ```bash
 streamlit run streamlit_app.py
 ```
-<img width="1494" height="642" alt="image" src="https://github.com/user-attachments/assets/ab56afb5-25df-473e-85dd-593ce1fad654" />
-
 
 #### 4. Run CLI (Legacy Mode)
+
 You can still use the command-line interface:
+
 ```bash
 python main.py "machine learning" --limit 50 --topics 3
 ```
@@ -219,33 +238,40 @@ MultiAgents_with_Ollama/
 ### Key Files
 
 #### `main.py`
+
 Entry point that orchestrates the entire pipeline. It includes **automatic model unloading** to ensure smooth operation on devices with limited VRAM (e.g., 24GB Unified Memory).
 
 #### `agents/collector.py`
+
 - `PaperCollector` class
 - Fetches papers from OpenAlex API
 - Reconstructs abstracts from inverted index
 - Creates ChromaDB vector store with embeddings
 
 #### `agents/generator.py`
+
 - `TopicGenerator` class
 - Uses RAG (Retrieval-Augmented Generation) approach
 - Generates structured research topics with detailed sections
 
 #### `agents/evaluator.py`
+
 - `TopicEvaluator` class
 - Scores topics on **Originality**, **Feasibility**, and **Impact**
 - Provides reasoning for scores
 
 #### `agents/translator.py`
+
 - `TopicTranslator` class
 - Translates all topic content while preserving academic tone
 
 #### `utils/report_generator.py`
+
 - `generate_html_report()` function
 - Creates beautiful, responsive HTML reports
 
 #### `config.py`
+
 Central configuration file for all system parameters.
 
 ---
@@ -286,8 +312,13 @@ All output files are organized in the `results/` directory:
 Edit `config.py`:
 
 ```python
-MODEL_GENERATOR = "llama3:70b"  # Use a different model
-MODEL_EVALUATOR = "mistral:7b"
+# Option 1: Local Ollama Models
+MODEL_GENERATOR = "deepseek-r1:14b"
+MODEL_EVALUATOR = "ministral-3:8b"
+
+# Option 2: Ollama Cloud Models (Requires no local VRAM)
+# MODEL_GENERATOR = "deepseek-v3.1:671b-cloud"
+# MODEL_EVALUATOR = "gpt-oss:120b-cloud"
 ```
 
 ### Adjust Creativity vs Consistency
@@ -305,19 +336,25 @@ EVALUATOR_TEMPERATURE = 0.1
 ## 🛠️ Troubleshooting
 
 ### Issue: "Connection refused to localhost:11434"
-**Solution**: 
+
+**Solution**:
+
 - **Local**: Make sure Ollama is running: `ollama serve`
 - **Docker**: Ensure `OLLAMA_BASE_URL` is set to `http://host.docker.internal:11434` (default in docker-compose).
 
 ### Issue: "Model not found"
+
 **Solution**: Pull the required models: `ollama pull <model_name>`
 
 ### Issue: Out of memory
+
 **Solution**:
+
 - The system automatically unloads models, but you can further optimize by reducing `VECTOR_DB_BATCH_SIZE` in `config.py`.
 - Reduce the number of papers (`--limit 20`).
 
 ### Issue: OpenAlex API rate limiting
+
 **Solution**: Add your email to `config.py` (`USER_AGENT_EMAIL`) to access the "polite pool".
 
 ---

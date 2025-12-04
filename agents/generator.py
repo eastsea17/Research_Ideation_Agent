@@ -95,25 +95,38 @@ class TopicGenerator:
         Use these specific details to ground your proposals in reality and technical feasibility:
         {context}
         
-        --- 3. IDEATION FRAMEWORK ---
-        To generate the topics, follow this cognitive process:
-        A. Gap Analysis: Identify what the current SOTA papers are failing to solve or ignoring.
-        B. Methodological Innovation: Do not just apply existing methods to new data. Propose a novel architecture, a hybrid algorithm, or a counter-intuitive approach.
-        C. Interdisciplinary Fusion: Combine concepts from the context with disparate fields to create unique solutions.
+        --- 3. IDEATION FRAMEWORK (Chain of Thought) ---
+        To generate the topics, you MUST first engage in a deep reasoning process using the <think> tag.
+        Inside the <think> block, follow this "Critic -> Solution" logic:
+        
+        <think>
+        1. CRITIC (Identify Limitations):
+           - Critically analyze the provided "Latest Papers" and "Context".
+           - Explicitly state what is MISSING, FLAWED, or OUTDATED in the current research.
+           - Why are existing approaches insufficient? (e.g., "Current methods rely on X which is computationally expensive," or "They fail to address Y scenario").
+           
+        2. SOLUTION (Propose Alternatives):
+           - For each limitation identified, propose a specific, novel alternative.
+           - How can we overcome the identified flaws? (e.g., "Instead of X, we can use Z to reduce complexity," or "Integrate A and B to solve Y").
+           - Verify if this solution is truly "disruptive" and not just an incremental improvement.
+        </think>
         
         --- 4. STRICT CONSTRAINTS ---
         - Avoid "incremental" improvements (e.g., "Using X for Y"). Focus on "disruptive" ideas.
-        - Ensure "Necessity" clearly argues why current methods fail.
+        - Ensure "Necessity" clearly argues why current methods fail (based on your <think> analysis).
         - Ensure "Expected Effects" includes quantitative or specific qualitative breakthroughs (e.g., "Reducing complexity from O(N^2) to O(N)").
         
         --- 5. OUTPUT FORMAT ---
         Provide ONLY the JSON object. Do NOT include markdown formatting (```json), explanations, or schema definitions ($defs).
+        The <think> block should come BEFORE the JSON output, but the final response should be parsed to extract the JSON.
+        (Note: The system will extract the JSON, so you can output the <think> block first, followed by the JSON).
+        
         Follow the structure of the EXAMPLE below exactly.
 
         EXAMPLE JSON OUTPUT:
         {example_json}
 
-        YOUR PROPOSAL (JSON ONLY):
+        YOUR PROPOSAL:
         """
         
         prompt = PromptTemplate(
@@ -125,7 +138,7 @@ class TopicGenerator:
         chain = prompt | self.llm
         
         try:
-            print("⏳ Asking LLM to generate ideas (this may take a moment with DeepSeek-R1)...")
+            print("⏳ Asking LLM to generate ideas (this may take a moment with local llm)...")
             response_msg = chain.invoke({
                 "num_topics": num_topics,
                 "keyword": keyword,
